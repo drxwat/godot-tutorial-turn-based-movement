@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/v1.1 dungeon crawler 16x16 pixel pack/full tilemap.png" type="Texture" id=1]
 [ext_resource path="res://levels/Level2d.gd" type="Script" id=2]
 [ext_resource path="res://objects/torch/Torch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/unit/Unit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://core/units_variations/knight/Knight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://core/units_variations/flying_eye/FlyingEye.tscn" type="PackedScene" id=6]
+[ext_resource path="res://core/units_variations/slime/Slime.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "full tilemap.png 0"
@@ -412,42 +415,43 @@ __meta__ = {
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.733333, 0.764706, 0.831373, 1 )
+color = Color( 0.882353, 0.905882, 1, 1 )
 
 [node name="Torches" type="Node2D" parent="."]
 
 [node name="Torch" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( -118.956, -103.788 )
-frame = 5
+frame = 0
 
 [node name="Torch2" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( -55.9577, -104.065 )
+frame = 4
 
 [node name="Torch3" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 18.7899, -104.244 )
-frame = 2
 
 [node name="Torch4" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 134.13, -105.138 )
-frame = 2
 
 [node name="Torch5" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( -159.496, -24.8466 )
-frame = 5
+frame = 0
 
 [node name="Torch6" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( -157.886, 53.2987 )
-frame = 4
+frame = 5
 
 [node name="Torch7" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 175.259, -58.2863 )
+frame = 4
 
 [node name="Torch8" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 175.796, -1.59972 )
-frame = 0
+frame = 1
 
 [node name="Torch9" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 174.902, 65.4586 )
+frame = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 16.5573, -9.65842 )
@@ -460,6 +464,34 @@ position = Vector2( -88.3665, -24.9841 )
 
 [node name="Unit2" parent="Units" instance=ExtResource( 4 )]
 position = Vector2( -89.0879, 54.6577 )
+move_points = 5
 
 [node name="Unit3" parent="Units" instance=ExtResource( 4 )]
 position = Vector2( -9.0133, -65.6706 )
+
+[node name="FlyingEye" parent="Units" instance=ExtResource( 6 )]
+position = Vector2( 120.438, -42.3834 )
+move_points = 8
+
+[node name="Knight" parent="Units" instance=ExtResource( 5 )]
+position = Vector2( 24.9314, 56.9587 )
+move_points = 5
+
+[node name="Knight2" parent="Units" instance=ExtResource( 5 )]
+position = Vector2( 83.8079, 55.9998 )
+move_points = 5
+
+[node name="Knight3" parent="Units" instance=ExtResource( 5 )]
+position = Vector2( -105.671, -74.0271 )
+move_points = 6
+
+[node name="Slime" parent="Units" instance=ExtResource( 7 )]
+position = Vector2( -10.3561, 18.9862 )
+move_points = 3
+
+[node name="Slime2" parent="Units" instance=ExtResource( 7 )]
+position = Vector2( 55.4245, -10.3561 )
+move_points = 3
+
+[node name="Slime3" parent="Units" instance=ExtResource( 7 )]
+position = Vector2( 36.63, -74.4107 )
